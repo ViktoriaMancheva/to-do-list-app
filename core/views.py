@@ -8,7 +8,7 @@ from .forms import CreateTaskForm, UpdateTaskForm
 
 def display_tasks(request):
     tasks = Task.objects.all().order_by('pub_date')
-    return render(request, "polls/display_tasks.html", {'tasks': tasks})
+    return render(request, "core/display_tasks.html", {'tasks': tasks})
 
 
 def create_task(request):
@@ -19,13 +19,13 @@ def create_task(request):
             return HttpResponseRedirect(reverse("display_tasks"))
     else:
         task = CreateTaskForm
-    return render(request, 'polls/create_task.html', {"task": task})
+    return render(request, 'core/create_task.html', {"task": task})
 
 
 def done(request):
     task_list = Task.objects.filter(status=True)
     context = {"tasks": task_list}
-    return render(request, "polls/done.html", context)
+    return render(request, "core/done.html", context)
 
 
 def delete_task(request, task_id):
@@ -45,4 +45,4 @@ def update_task(request, task_id):
             return HttpResponseRedirect(reverse("display_tasks"))
     else:
         form = UpdateTaskForm(instance=task_instance)
-    return render(request, "polls/update_task.html", {"form": form})
+    return render(request, "core/update_task.html", {"form": form})

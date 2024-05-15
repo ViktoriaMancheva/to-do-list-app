@@ -1,6 +1,6 @@
 from django.urls import path
 
-from polls import views
+from core import views
 
 urlpatterns = [
     path("display_tasks/", views.display_tasks, name="display_tasks"),

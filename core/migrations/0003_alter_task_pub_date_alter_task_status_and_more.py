@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('polls', '0002_remove_task_user_id_delete_user'),
+        ('core', '0002_remove_task_user_id_delete_user'),
     ]
 
     operations = [

@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=255)),
                 ('status', models.BooleanField(default=False)),
                 ('pub_date', models.DateTimeField(verbose_name='Date published')),
-                ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='polls.user')),
+                ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.user')),
             ],
         ),
     ]
