@@ -1,0 +1,12 @@
+<center>
+    
+<form style="font-size:130%;" action="" method="POST" >
+    {% csrf_token %}
+    {{ task.as_p }}
+
+    <input style="font-size:120%;" type="Submit" value="Submit" class="btn btn-secondary">
+</form>
+    <a style="font-size:150%; color:hotpink" href="{% url 'display_tasks' %}">Return</a>
+</center>
+
+
